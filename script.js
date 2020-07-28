@@ -25,13 +25,23 @@ $.ajax({
   data: {
 
     'api_key': apiKey,
-    'query': query
+    'query': query,
+    'language': 'it'
   },
 
   success: function(data){
     console.log(data);
 
     var movies = data['results'];
+
+    //estrapoliamo il voto e lo arrotondiamo per difetto
+
+    var result = movies.map(function(voto) {return voto.vote_average;});
+    console.log('result',result);
+
+    var starCount = (Math.ceil(result))/2;
+    console.log(starCount);
+
 
     // scaffold di Handelbars
     var target = $('#results ul')
@@ -48,10 +58,24 @@ $.ajax({
   error: function(error){
     console.log('error', error);
   }
-
 });
 }
 
+// Trasformiamo il voto da 1 a 10 decimale in un numero intero da 1 a 5, così da permetterci di stampare a schermo un numero di stelle piene che vanno da 1 a 5, lasciando le restanti vuote (troviamo le icone in FontAwesome).
+
+
+//mi serve la chiave vote_average che è uguale ad un numero da 1 a 10.
+//arrotondo il numero con Math.ceil
+
+// var voto = Math.ceil('vote_average');
+// console.log(voto);
+
+
+// Arrotondiamo sempre per eccesso all’unità successiva, non gestiamo icone mezze piene (o mezze vuote :P)
+
+// Trasformiamo poi la stringa statica della lingua in una vera e propria bandiera della nazione corrispondente, gestendo il caso in cui non abbiamo la bandiera della nazione ritornata dall’API (le flag non ci sono in FontAwesome).
+
+// Allarghiamo poi la ricerca anche alle serie tv. Con la stessa azione di ricerca dovremo prendere sia i film che corrispondono alla query, sia le serie tv, stando attenti ad avere alla fine dei valori simili (le serie e i film hanno campi nel JSON di risposta diversi, simili ma non sempre identici)
 
 
 
