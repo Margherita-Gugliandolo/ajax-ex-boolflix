@@ -10,30 +10,41 @@
   <!-- template -->
 
     <script id="movie-template" type="text/x-handlebars-template">
-      <li>
-        {{ title }} <br>
-        {{ original_title }} <br>
-        {{ original_language }} <br>
-        {{ vote_average }} <br>
-        {{ overview }} <br>
-        <i class="{{star1}} far fa-star"></i>
-        <i class="{{star2}} far fa-star"></i>
-        <i class="{{star3}} far fa-star"></i>
-        <i class="{{star4}} far fa-star"></i>
-        <i class="{{star5}} far fa-star"></i>
-      </li>
+      <div class='module module-movie' style='background-image: url({{movieImage}})'>
+        <div class='movie-info'>
+          <h3 class='movie-title'>
+             {{title}}
+             <i class="{{star1}} fas fa-star"></i>
+             <i class="{{star2}} far fa-star"></i>
+             <i class="{{star3}} far fa-star"></i>
+             <i class="{{star4}} far fa-star"></i>
+             <i class="{{star5}} far fa-star"></i>
+          </h3>
+          <p class='original-title'>
+             {{original_title}}
+          </p>
+          <p class='original-language'>
+             {{original_language}}
+          </p>
+          <p class='vote-average'>
+             {{vote_average}}
+          </p>
+        </div>
+      </div>
     </script>
     <title>Boolflix</title>
   </head>
   <body>
     <div class="container">
-      <div class="header">
-        <input id="query" type="text" name="" value="">
-        <button id= "search" type="button" name="button">Search</button>
-      </div>
-      <div id="results" class="results">
-        <ul></ul>
-      </div>
+      <section id="movies">
+        <h2>List of Movies</h2>
+        <div class="header">
+          <input id="query" type="text" placeholder="Scrivi qui titolo">
+          <button id= "search" type="button" name="button">Search</button>
+        </div>
+        <!-- append movies here -->
+        <div id="results" class="results"></div>
+      </section>
     </div>
 
 

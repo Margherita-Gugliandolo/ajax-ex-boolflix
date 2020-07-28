@@ -42,11 +42,11 @@ $.ajax({
     for (var i = 0; i < results.length; i++) {
       var stars = results[i];
       var star = ((Math.ceil(stars))/2).toFixed(0);
-      console.log(star);
+      console.log('star', star);
    }
 
     // scaffold di Handelbars
-    var target = $('#results ul')
+    var target = $('#results')
     var template = $('#movie-template').html();
     var compiled = Handlebars.compile(template);
     target.text('');
