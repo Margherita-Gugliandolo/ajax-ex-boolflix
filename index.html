@@ -10,15 +10,16 @@
   <!-- template -->
 
     <script id="movie-template" type="text/x-handlebars-template">
-      <div class='module module-movie' style='background-image: url({{movieImage}})'>
+      <div class='module module-movie' style=" background-image: url('{{movieImage}}')">
+
         <div class='movie-info'>
           <h3 class='movie-title'>
              {{title}}
-             <i class="{{star1}} fas fa-star"></i>
-             <i class="{{star2}} far fa-star"></i>
-             <i class="{{star3}} far fa-star"></i>
-             <i class="{{star4}} far fa-star"></i>
-             <i class="{{star5}} far fa-star"></i>
+             <i class="fas fa-star">{{star}}</i>
+             <i class="fas fa-star">{{star}}</i>
+             <i class="far fa-star">{{star}}</i>
+             <i class="far fa-star">{{star}}</i>
+             <i class="far fa-star">{{star}}</i>
           </h3>
           <p class='original-title'>
              {{original_title}}
@@ -37,8 +38,9 @@
   <body>
     <div class="container">
       <section id="movies">
-        <h2>List of Movies</h2>
+        <h2>Boolflix</h2>
         <div class="header">
+          <i class="fas fa-search"></i>
           <input id="query" type="text" placeholder="Scrivi qui titolo">
           <button id= "search" type="button" name="button">Search</button>
         </div>

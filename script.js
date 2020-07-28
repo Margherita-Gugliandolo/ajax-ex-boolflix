@@ -53,6 +53,7 @@ $.ajax({
 
     for (var i = 0; i < movies.length; i++) {
       var movie = movies[i];
+
       var movieHTML = compiled(movie);
       target.append(movieHTML);
     }

@@ -18,22 +18,38 @@ section {
 h2 {
   margin: 0 0 0.5rem 0;
   padding: 0 0 0.25rem 0;
-  border-bottom: 2px solid #333;
+  color: #2a8ba3;
+  font-size: 34px;
+  border-bottom: 2px solid #2a8ba3;
 }
 
 #search{
   padding: 0.25rem;
-  background-color: #000;
-  color:#fff;
+  background-color: #fff;
+  color:#2a8ba3;
   font-size: 18px;
   font-weight: bold;
-  border-radius:5px;
+  border:none;
+  border-bottom:1px solid #2a8ba3;
+  border-left:1px solid #2a8ba3;
+  box-shadow: -1px 3px 3px 0px #2a8ba3;
+  margin-left: 15px;
   cursor:pointer;
 }
 
 #query{
-  box-shadow: 0px 0px 3px 0px #000000;
+  border:none;
+  border-bottom: 2px solid #2a8ba3;
   height:1.8rem;
+}
+
+#query:focus, #search:focus{
+  outline:none;
+}
+
+.fa-search{
+  color:#2a8ba3;
+  padding: 0 10px;
 }
 
 .module {
