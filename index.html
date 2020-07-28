@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
   <!-- template -->
@@ -13,7 +15,12 @@
         {{ original_title }} <br>
         {{ original_language }} <br>
         {{ vote_average }} <br>
-        {{ overview }}
+        {{ overview }} <br>
+        <i class="{{star1}} far fa-star"></i>
+        <i class="{{star2}} far fa-star"></i>
+        <i class="{{star3}} far fa-star"></i>
+        <i class="{{star4}} far fa-star"></i>
+        <i class="{{star5}} far fa-star"></i>
       </li>
     </script>
     <title>Boolflix</title>
