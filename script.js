@@ -4,82 +4,61 @@
 // 3. Lingua
 // 4. Voto
 
-function addSearch() {
-  var button = $('#btn');
-  var input = $('#search');
-  button.click(getClick);
+//chiamata: https://api.themoviedb.org/3/search/movie
+//api_key: e99307154c6dfb0b4750f6603256716d
+
+function addSearchClickListener(){
+var target = $('#search');
+target.click(getMovies);
 }
 
-function getClick() {
-  var input = $('#search');
-  var query = input.val();
-  if (query) {
-    search(query);
-  }
-}
-
-// chiamata ajax
-
-function search (query) {
+function getMovies(){
+  var target = $('#query');
+  var query = target.val();
   var apiKey = 'e99307154c6dfb0b4750f6603256716d';
-  var input = $('#search');
-  input.val('');
+  target.val('');
 
-  $.ajax({
-    url: 'https://api.themoviedb.org/3/search/movie',
-    method: 'GET',
-    data: {
-      'api_key': apiKey,
-      'query': query,
-      'language': 'it-IT'
-    },
-    success: function(data) {
-      var results = data['results'];
-      var totalResults = data['total_results'];
+$.ajax({
 
-      if (totalResults > 0) {
+  url: 'https://api.themoviedb.org/3/search/movie',
+  method: 'GET',
+  data: {
 
-        //Print results
-        printSearchResult (results);
-      } else {
-        console.log(error);
-      }
-    },
-    error: function(error) {
-      console.log(error);
+    'api_key': apiKey,
+    'query': query
+  },
+
+  success: function(data){
+    console.log(data);
+
+    var movies = data['results'];
+
+    // scaffold di Handelbars
+    var target = $('#results ul')
+    var template = $('#movie-template').html();
+    var compiled = Handlebars.compile(template);
+    target.text('');
+
+    for (var i = 0; i < movies.length; i++) {
+      var movie = movies[i];
+      var movieHTML = compiled(movie);
+      target.append(movieHTML);
     }
-  });
-}
+  },
+  error: function(error){
+    console.log('error', error);
+  }
 
- // print results
-
-function printSearchResult (results){
-  var template=$('#template').html();
-  var templateScript = Handlebars.compile(template);
-  var target = $('.container');
-  target.html('');
-  var compiled = Handlebars.compile(template);
-
-  for (var i = 0; i < results.length; i++) {
-    var result = results[i];
-    console.log(results);
-    var compiledHTML = compiled({
-      name: result.title,
-      original_title: result.original_title,
-      original_language: result.original_language,
-      popularity: result.vote_average
-    });
-  target.append(compiledHTML);
-}
+});
 }
 
 
 
-function init() {
-  console.log('hello world');
-  addSearch();
+
+
+
+
+function init(){
+  addSearchClickListener();
 }
-
-
-
 $(document).ready(init);

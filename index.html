@@ -7,23 +7,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
   <!-- template -->
 
-    <script id="template" type="text/x-handlebars-template">
-      <div class="film">
-          <li>{{name}}</li>
-          <li>{{original_title}}</li>
-          <li>{{original_language}}</li>
-          <li>{{popularity}}</li>
-      </div>
+    <script id="movie-template" type="text/x-handlebars-template">
+     <li>
+        {{ title }}
+        {{ original_title }}
+        {{ original_language }}
+        {{ vote_average }}
+     </li>
     </script>
     <title>Boolflix</title>
   </head>
   <body>
-    <div class="loyaut">
-      <div class="console">
-        <input id="search" type="text" name="" value="">
-        <button id= "btn" type="button" name="button">Search</button>
+    <div class="container">
+      <div class="header">
+        <input id="query" type="text" name="" value="">
+        <button id= "search" type="button" name="button">Search</button>
       </div>
-      <div class="container"></div>
+      <div id="results" class="results">
+        <ul></ul>
+      </div>
     </div>
 
 
