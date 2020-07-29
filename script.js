@@ -1,4 +1,5 @@
 //chiamata: https://api.themoviedb.org/3/search/movie
+//serie: https://api.themoviedb.org/3/search/tv
 //api_key: e99307154c6dfb0b4750f6603256716d
 
 function addSearchClickListener(){
@@ -68,9 +69,53 @@ $.ajax({
 });
 }
 
-function getSeries(){
+function getSeries(query){
 
+  $.ajax({
 
+    url: 'https://api.themoviedb.org/3/search/tv',
+    method: 'GET',
+    data: {
+
+      'api_key': 'e99307154c6dfb0b4750f6603256716d',
+      'query': query,
+      'language': 'it'
+    },
+
+    success: function(data){
+      console.log(data);
+
+      var series = data['results'];
+
+      // scaffold di Handelbars
+      var template = $('#serie-template').html();
+      var compiled = Handlebars.compile(template);
+      var target = $('#results');
+
+      for (var i = 0; i < series.length; i++) {
+        var serie = series[i];
+
+        var vote = serie['vote_average'];
+        serie.stars = getStars(vote);
+
+        var lang = serie['original_language'];
+        serie.flag = getFlag(lang);
+
+        var title = serie['name'];
+
+        serie.title = '<h3 class="movie-title"></h3>' + title;
+
+        var originalTitle = serie['original_name'];
+        serie.original_title = '<p class="original-title"></p>' + originalTitle;
+
+        var serieHTML = compiled(serie);
+        target.append(serieHTML);
+      }
+    },
+    error: function(error){
+      console.log('error', error);
+    }
+  });
 }
 
 
