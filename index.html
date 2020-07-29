@@ -10,26 +10,16 @@
   <!-- template -->
 
     <script id="movie-template" type="text/x-handlebars-template">
-      <div class='module module-movie' style=" background-image: url('{{movieImage}}')">
-
+      <div class='module module-movie'>
         <div class='movie-info'>
-          <h3 class='movie-title'>
-             {{title}}
-             <i class="fas fa-star">{{star}}</i>
-             <i class="fas fa-star">{{star}}</i>
-             <i class="far fa-star">{{star}}</i>
-             <i class="far fa-star">{{star}}</i>
-             <i class="far fa-star">{{star}}</i>
-          </h3>
-          <p class='original-title'>
-             {{original_title}}
-          </p>
-          <p class='original-language'>
-             {{original_language}}
-          </p>
-          <p class='vote-average'>
-             {{vote_average}}
-          </p>
+          <li>
+             {{{title}}} <br>
+             {{{original_title}}} <br>
+             {{original_language}} <br>
+             {{vote_average}} <br>
+             {{{stars}}} <br>
+             {{{flag}}} <br>
+          </li>
         </div>
       </div>
     </script>
@@ -41,11 +31,11 @@
         <h2>Boolflix</h2>
         <div class="header">
           <i class="fas fa-search"></i>
-          <input id="query" type="text" placeholder="Scrivi qui titolo">
+          <input id="query" type="text" placeholder="Scrivi qui titolo" value = "Matrix">
           <button id= "search" type="button" name="button">Search</button>
         </div>
         <!-- append movies here -->
-        <div id="results" class="results"></div>
+        <ul id="results" class="results"></ul>
       </section>
     </div>
 

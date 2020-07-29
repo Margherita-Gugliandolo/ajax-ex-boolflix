@@ -6,11 +6,16 @@
 
 body {
   padding: 1rem;
-  background: #333;
+  background: #122B40;
+}
+
+li{
+  list-style: none;
+  margin: 1rem 0.5rem;
 }
 
 section {
-  background: white;
+  background: #2C699A;
   padding: 1rem;
   overflow: hidden;
 }
@@ -18,29 +23,33 @@ section {
 h2 {
   margin: 0 0 0.5rem 0;
   padding: 0 0 0.25rem 0;
-  color: #2a8ba3;
+  color: #e8ed6a;
   font-size: 34px;
-  border-bottom: 2px solid #2a8ba3;
+  border-bottom: 4px solid #e8ed6a;
 }
 
 #search{
-  padding: 0.25rem;
-  background-color: #fff;
-  color:#2a8ba3;
+  padding: 0.5rem;
+  background-color: #122B40;
+  color:#e8ed6a;
   font-size: 18px;
   font-weight: bold;
   border:none;
-  border-bottom:1px solid #2a8ba3;
-  border-left:1px solid #2a8ba3;
-  box-shadow: -1px 3px 3px 0px #2a8ba3;
+  border-radius: 5px;
   margin-left: 15px;
   cursor:pointer;
 }
 
+#search:hover{
+  color:#fff;
+}
+
 #query{
   border:none;
-  border-bottom: 2px solid #2a8ba3;
+  border-bottom: 2px solid #e8ed6a;
   height:1.8rem;
+  background-color: #2C699A;
+  color: #e8ed6a;
 }
 
 #query:focus, #search:focus{
@@ -48,7 +57,8 @@ h2 {
 }
 
 .fa-search{
-  color:#2a8ba3;
+  color:#e8ed6a;
+  font-size: 20px;
   padding: 0 10px;
 }
 
@@ -87,26 +97,35 @@ h2 {
   z-index: 2;
 }
 .movie-title {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.3rem 0;
 }
 .movie-title::before {
   content: "Title";
   display: block;
-  font-size: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
   text-transform: uppercase;
-  color: #999;
+  color: #2a8ba3;
 }
 .original-title::before {
   content: "Original Title";
   display: block;
-  font-size: 0.5rem;
+  font-size: 1rem;
   text-transform: uppercase;
-  color: #999;
+  color: #2a8ba3;
 }
 .original-title {
   margin: 0;
 }
 
+.fas.fa-star, .far.fa-star{
+  padding: 10px 0;
+}
+
 .fas.fa-star{
-  color: yellow;
+  color: #e8ed6a;
+}
+
+.flag{
+  width:30px;
 }
