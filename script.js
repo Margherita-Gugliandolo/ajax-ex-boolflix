@@ -19,7 +19,7 @@ function startSearch(query){
   getSeries(query);
 }
 
-function getMovies(){
+function getMovies(query){
 
 $.ajax({
 
@@ -38,10 +38,9 @@ $.ajax({
     var movies = data['results'];
 
     // scaffold di Handelbars
-    var target = $('#results ul');
     var template = $('#movie-template').html();
     var compiled = Handlebars.compile(template);
-
+    var target = $('#results');
 
     for (var i = 0; i < movies.length; i++) {
       var movie = movies[i];
