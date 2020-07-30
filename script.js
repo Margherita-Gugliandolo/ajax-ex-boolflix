@@ -103,10 +103,10 @@ function getSeries(query){
 
         var title = serie['name'];
 
-        serie.title = '<h3 class="movie-title"></h3>' + title;
+        serie.name = '<h3 class="movie-title"></h3>' + title;
 
         var originalTitle = serie['original_name'];
-        serie.original_title = '<p class="original-title"></p>' + originalTitle;
+        serie.original_name = '<p class="original-title"></p>' + originalTitle;
 
         var serieHTML = compiled(serie);
         target.append(serieHTML);
