@@ -62,13 +62,11 @@ h2 {
   padding: 0 10px;
 }
 
-.module {
-  margin: 0 0 1rem 0;
-}
-
-.module:hover .movie-info{
+.module-movie:hover .movie-info{
   display: block;
   background-color: rgba(0,0,0,0.6);
+  max-height: 550px;
+  border-radius: 15px;
 }
 .module-movie {
   margin-top:20px;
@@ -76,10 +74,13 @@ h2 {
   width: 30%;
   margin-right: 2%;
   margin-left:2%;
-  height: 600px;
+  height: 500px;
+  border-radius: 15px;
+  box-shadow: -1px 1px 5px 0px #000000;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
 }
 .module-movie:nth-of-type(3n) {
   margin-right: 0;
