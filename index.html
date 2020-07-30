@@ -10,7 +10,9 @@
   <!-- template -->
 
     <script id="movie-template" type="text/x-handlebars-template">
-      <div class='module module-movie'>
+      {{#if poster_path}}
+      <div class='module module-movie' style = "background-image: url(https://image.tmdb.org/t/p/w342/{{poster_path}})">
+      {{/if}}
         <div class='movie-info'>
           <li>
              {{{title}}} <br>
@@ -19,21 +21,24 @@
              {{vote_average}} <br>
              {{{stars}}} <br>
              {{{flag}}} <br>
+             {{overview}}
           </li>
         </div>
       </div>
     </script>
     <script id="serie-template" type="text/x-handlebars-template">
-      <div class='module module-movie'>
+      {{#if poster_path}}
+      <div class='module module-movie' style = "background-image: url(https://image.tmdb.org/t/p/w342/{{poster_path}})">
+      {{/if}}
         <div class='movie-info'>
-          <h2> Serie tv </h2>
           <li>
              {{{name}}} <br>
              {{{original_name}}} <br>
              {{original_language}} <br>
              {{vote_average}} <br>
              {{{stars}}} <br>
-             {{{flag}}}
+             {{{flag}}} <br>
+             {{overview}}
           </li>
         </div>
       </div>
@@ -46,7 +51,7 @@
         <h2>Boolflix</h2>
         <div class="header">
           <i class="fas fa-search"></i>
-          <input id="query" type="text" placeholder="Scrivi qui titolo" value = "Matrix">
+          <input id="query" type="text" placeholder="Scrivi qui titolo">
           <button id= "search" type="button" name="button">Search</button>
         </div>
         <!-- append movies here -->

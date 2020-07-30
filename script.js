@@ -144,8 +144,5 @@ function getFlag(lang){
 
 function init(){
   addSearchClickListener();
-
-  // debug;
-  startSearch();
 }
 $(document).ready(init);

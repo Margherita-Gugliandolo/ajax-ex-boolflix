@@ -65,11 +65,18 @@ h2 {
 .module {
   margin: 0 0 1rem 0;
 }
+
+.module:hover .movie-info{
+  display: block;
+  background-color: rgba(0,0,0,0.6);
+}
 .module-movie {
+  margin-top:20px;
   float: left;
-  width: 32%;
+  width: 30%;
   margin-right: 2%;
-  height: 391px;
+  margin-left:2%;
+  height: 600px;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -95,6 +102,7 @@ h2 {
   padding: 0.5rem;
   color: white;
   z-index: 2;
+  display:none;
 }
 .movie-title {
   margin: 0 0 0.3rem 0;
